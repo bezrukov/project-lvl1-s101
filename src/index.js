@@ -1,6 +1,5 @@
-import readlineSync from 'readline-sync';
+import getUserName from './get-user-name';
 
 export default () => {
-  const clientName = readlineSync.question('May I have you name ? ');
-  console.log(`Hello, ${clientName}`);
+  getUserName();
 };

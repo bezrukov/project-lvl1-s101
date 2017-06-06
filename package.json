@@ -1,6 +1,6 @@
 {
   "name": "brain-games-101",
-  "version": "0.0.3",
+  "version": "0.0.7",
   "description": "cli game Brain Game",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,8 @@
     "eslint-plugin-import": "^2.3.0"
   },
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "author": "",
   "license": "ISC",
