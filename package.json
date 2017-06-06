@@ -13,6 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/bezrukov/project-lvl1-s101.git"
   },
+  "dependencies": {
+    "readline-sync": "^1.4.7"
+  },
   "devDependencies": {
     "babel-cli": "*",
     "babel-core": "*",
@@ -31,8 +34,5 @@
   "bugs": {
     "url": "https://github.com/bezrukov/project-lvl1-s101/issues"
   },
-  "homepage": "https://github.com/bezrukov/project-lvl1-s101#readme",
-  "dependencies": {
-    "readline-sync": "^1.4.7"
-  }
+  "homepage": "https://github.com/bezrukov/project-lvl1-s101#readme"
 }
