@@ -1,6 +1,6 @@
 {
   "name": "brain-games-101",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "description": "cli game Brain Game",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,8 @@
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "author": "",
   "license": "ISC",
