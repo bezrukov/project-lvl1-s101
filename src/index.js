@@ -39,9 +39,9 @@ export default (game) => {
   console.log(game('getWelcome'));
   const clientName = getUserName();
 
-  const gameResult = answerIteration(game);
-
-  gameResult
-    ? console.log(`Congratulations, ${clientName}!`)
-    : console.log(`Let's try again, ${clientName}!!`);
+  if (answerIteration(game)) {
+    console.log(`Congratulations, ${clientName}!`);
+  } else {
+    console.log(`Let's try again, ${clientName}!!`);
+  }
 };
