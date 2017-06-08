@@ -1,38 +1,28 @@
-const getRandomNumber = (minValue = 1, maxValue = 50) =>
-  parseInt(Math.random() * ((maxValue - minValue) + minValue), 10);
-
-const gcd = (firstOperand, secondOperand) => {
-  return !secondOperand
+const gcd = (firstOperand, secondOperand) =>
+  (!secondOperand
     ? firstOperand
-    : gcd(secondOperand, firstOperand % secondOperand);
+    : gcd(secondOperand, firstOperand % secondOperand));
+
+const getQuestion = (getRandomNumber) => {
+  const firstOperand = getRandomNumber();
+  const secondOperand = getRandomNumber();
+
+  return {
+    question: `${firstOperand} ${secondOperand}`,
+    answer: gcd(firstOperand, secondOperand),
+  };
 };
 
-let firstOperand = 0;
-let secondOperand = 0;
-
-const getWelcome = () =>
-  'Find the greatest common divisor of given numbers. \n';
-
-const getQuestion = () => {
-  firstOperand = getRandomNumber();
-  secondOperand = getRandomNumber();
-
-  return `${firstOperand} ${secondOperand}`;
-};
-
-const checkAnswer = answer =>
-  parseInt(answer, 10) === gcd(firstOperand, secondOperand);
+const welcome = 'What is the result of the expression?. \n';
 
 export default () =>
   (message) => {
     switch (message) {
       case 'getWelcome':
-        return getWelcome;
+        return welcome;
       case 'getQuestion':
         return getQuestion;
-      case 'checkAnswer':
-        return checkAnswer;
       default:
-        return getWelcome;
+        return welcome;
     }
   };

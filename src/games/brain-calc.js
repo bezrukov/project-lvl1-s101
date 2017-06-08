@@ -1,6 +1,3 @@
-const getRandomNumber = (minValue = 1, maxValue = 100) =>
-  parseInt(Math.random() * ((maxValue - minValue) + minValue), 10);
-
 const operations = ['+', '-', '*'];
 
 const resultOperations = (firstOperand, secondOperand, operation) => {
@@ -16,36 +13,29 @@ const resultOperations = (firstOperand, secondOperand, operation) => {
   }
 };
 
-let firstOperand = 0;
-let secondOperand = 0;
-let operation = '+';
+const getOperation = getRandomNumber => operations[getRandomNumber(1, 3)];
 
-const getOperation = () => operations[getRandomNumber(1, 3)];
+const getQuestion = (getRandomNumber) => {
+  const firstOperand = getRandomNumber();
+  const secondOperand = getRandomNumber();
+  const operation = getOperation(getRandomNumber);
 
-const getWelcome = () =>
-  'What is the result of the expression?. \n';
-
-const getQuestion = () => {
-  firstOperand = getRandomNumber();
-  secondOperand = getRandomNumber();
-  operation = getOperation();
-
-  return `${firstOperand} ${operation} ${secondOperand}`;
+  return {
+    question: `${firstOperand} ${operation} ${secondOperand}`,
+    answer: resultOperations(firstOperand, secondOperand, operation),
+  };
 };
 
-const checkAnswer = answer =>
-  parseInt(answer, 10) === resultOperations(firstOperand, secondOperand, operation);
+const welcome = 'What is the result of the expression?. \n';
 
 export default () =>
   (message) => {
     switch (message) {
       case 'getWelcome':
-        return getWelcome;
+        return welcome;
       case 'getQuestion':
         return getQuestion;
-      case 'checkAnswer':
-        return checkAnswer;
       default:
-        return getWelcome;
+        return welcome;
     }
   };

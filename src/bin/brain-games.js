@@ -1,6 +1,5 @@
-#!/usr/bin/env node
-import brainGames from '..';
+import readlineSync from 'readline-sync';
 
 console.log('Welcome to the Brain Games!');
-
-brainGames();
+const clientName = readlineSync.question('May I have you name ? ');
+console.log(`Hello, ${clientName} \n`);

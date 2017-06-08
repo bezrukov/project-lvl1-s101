@@ -1,6 +1,6 @@
 {
   "name": "brain-games-101",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "cli game Brain Game",
   "main": "index.js",
   "scripts": {
