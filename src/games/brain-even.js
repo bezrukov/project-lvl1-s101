@@ -1,4 +1,4 @@
-import gamesProcess from '../games-process';
+import startGamesProcess from '../games-process';
 import getRandomNumber from '../random-number';
 
 const answerYes = 'yes';
@@ -16,5 +16,5 @@ const getPuzzle = () => {
 
 export default () => {
   const description = 'Answer "yes" if number even otherwise answer "no".';
-  gamesProcess(description, getPuzzle);
+  startGamesProcess(description, getPuzzle);
 };

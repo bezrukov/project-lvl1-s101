@@ -1,4 +1,4 @@
-import gamesProcess from '../games-process';
+import startGamesProcess from '../games-process';
 import getRandomNumber from '../random-number';
 
 const gcd = (firstOperand, secondOperand) =>
@@ -18,5 +18,5 @@ const getPuzzle = () => {
 
 export default () => {
   const description = 'What is the result of the expression?.';
-  gamesProcess(description, getPuzzle);
+  startGamesProcess(description, getPuzzle);
 };
