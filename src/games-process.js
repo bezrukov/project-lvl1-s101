@@ -2,40 +2,30 @@ import readlineSync from 'readline-sync';
 
 const countTrueAnswer = 3;
 
-const getUserName = () => {
-  const clientName = readlineSync.question('May I have you name ? ');
-  console.log(`Hello, ${clientName} \n`);
-  return clientName;
-};
+const answerIteration = (game, count = 0) => {
+  if (count === countTrueAnswer) {
+    return true;
+  }
 
-let countTrueClientAnswer = 0;
-
-const answerIteration = (game) => {
   const gameQuestionAndAnswer = game();
   console.log(`Question: ${gameQuestionAndAnswer.question}`);
-
   const clientAnswer = readlineSync.question('Your answer: ');
-
-  const isWin = clientAnswer === gameQuestionAndAnswer.answer;
-
-  if (isWin) {
-    countTrueClientAnswer += 1;
+  if (clientAnswer === gameQuestionAndAnswer.answer) {
     console.log('Correct!');
   } else {
     console.log(`'${clientAnswer}' is wrong answer ;(. Correct answer was '${gameQuestionAndAnswer.answer}'.`);
     return false;
   }
 
-  return countTrueClientAnswer < countTrueAnswer
-    ? answerIteration(game)
-    : true;
+  return answerIteration(game, count + 1);
 };
 
 export default (desc, game) => {
   console.log('Welcome to the Brain Games!');
   console.log(`${desc}\n`);
 
-  const clientName = getUserName();
+  const clientName = readlineSync.question('May I have you name ? ');
+  console.log(`Hello, ${clientName} \n`);
 
   if (answerIteration(game)) {
     console.log(`Congratulations, ${clientName}!`);

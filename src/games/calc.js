@@ -1,6 +1,7 @@
 import startGamesProcess from '../games-process';
 import getRandomNumber from '../random-number';
 
+const description = 'What is the result of the expression?.';
 const operations = ['+', '-', '*'];
 
 const resultOperations = (firstOperand, secondOperand, operation) => {
@@ -25,11 +26,10 @@ const game = () => {
 
   return {
     question: `${firstOperand} ${operation} ${secondOperand}`,
-    answer: String(resultOperations(firstOperand, secondOperand, operation)),
+    answer: `${resultOperations(firstOperand, secondOperand, operation)}`,
   };
 };
 
 export default () => {
-  const description = 'What is the result of the expression?.';
   startGamesProcess(description, game);
 };

@@ -1,6 +1,8 @@
 import startGamesProcess from '../games-process';
 import getRandomNumber from '../random-number';
 
+const description = 'Balance the given number.';
+
 const getBalancedNumber = (unBalancedNumber) => {
   const arrayDigits = String(unBalancedNumber).split('').map(e => Number(e));
   const minDigit = Math.min(...arrayDigits);
@@ -25,6 +27,5 @@ const game = () => {
 };
 
 export default () => {
-  const description = 'Balance the given number.';
   startGamesProcess(description, game);
 };
