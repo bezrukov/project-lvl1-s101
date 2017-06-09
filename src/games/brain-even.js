@@ -5,7 +5,7 @@ const answerYes = 'yes';
 const answerNo = 'no';
 const isEven = number => number % 2 === 0;
 
-const getPuzzle = () => {
+const game = () => {
   const question = getRandomNumber();
 
   return {
@@ -16,5 +16,5 @@ const getPuzzle = () => {
 
 export default () => {
   const description = 'Answer "yes" if number even otherwise answer "no".';
-  startGamesProcess(description, getPuzzle);
+  startGamesProcess(description, game);
 };

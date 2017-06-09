@@ -18,7 +18,7 @@ const resultOperations = (firstOperand, secondOperand, operation) => {
 
 const getOperation = () => operations[getRandomNumber(1, 3)];
 
-const getPuzzle = () => {
+const game = () => {
   const firstOperand = getRandomNumber();
   const secondOperand = getRandomNumber();
   const operation = getOperation();
@@ -31,5 +31,5 @@ const getPuzzle = () => {
 
 export default () => {
   const description = 'What is the result of the expression?.';
-  startGamesProcess(description, getPuzzle);
+  startGamesProcess(description, game);
 };

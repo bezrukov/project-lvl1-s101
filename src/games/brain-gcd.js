@@ -6,7 +6,7 @@ const gcd = (firstOperand, secondOperand) =>
     ? firstOperand
     : gcd(secondOperand, firstOperand % secondOperand));
 
-const getPuzzle = () => {
+const game = () => {
   const firstOperand = getRandomNumber();
   const secondOperand = getRandomNumber();
 
@@ -17,6 +17,6 @@ const getPuzzle = () => {
 };
 
 export default () => {
-  const description = 'What is the result of the expression?.';
-  startGamesProcess(description, getPuzzle);
+  const description = 'Find the greatest common divisor of given numbers.';
+  startGamesProcess(description, game);
 };
