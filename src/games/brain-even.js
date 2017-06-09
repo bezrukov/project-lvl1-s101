@@ -1,8 +1,11 @@
+import gamesProcess from '../games-process';
+import getRandomNumber from '../random-number';
+
 const answerYes = 'yes';
 const answerNo = 'no';
 const isEven = number => number % 2 === 0;
 
-const getQuestion = (getRandomNumber) => {
+const getPuzzle = () => {
   const question = getRandomNumber();
 
   return {
@@ -11,16 +14,7 @@ const getQuestion = (getRandomNumber) => {
   };
 };
 
-const welcome = 'Answer "yes" if number even otherwise answer "no". \n';
-
-export default () =>
-  (message) => {
-    switch (message) {
-      case 'getWelcome':
-        return welcome;
-      case 'getQuestion':
-        return getQuestion;
-      default:
-        return welcome;
-    }
-  };
+export default () => {
+  const description = 'Answer "yes" if number even otherwise answer "no".';
+  gamesProcess(description, getPuzzle);
+};

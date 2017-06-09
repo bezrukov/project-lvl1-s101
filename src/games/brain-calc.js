@@ -1,3 +1,6 @@
+import gamesProcess from '../games-process';
+import getRandomNumber from '../random-number';
+
 const operations = ['+', '-', '*'];
 
 const resultOperations = (firstOperand, secondOperand, operation) => {
@@ -13,29 +16,20 @@ const resultOperations = (firstOperand, secondOperand, operation) => {
   }
 };
 
-const getOperation = getRandomNumber => operations[getRandomNumber(1, 3)];
+const getOperation = () => operations[getRandomNumber(1, 3)];
 
-const getQuestion = (getRandomNumber) => {
+const getPuzzle = () => {
   const firstOperand = getRandomNumber();
   const secondOperand = getRandomNumber();
-  const operation = getOperation(getRandomNumber);
+  const operation = getOperation();
 
   return {
     question: `${firstOperand} ${operation} ${secondOperand}`,
-    answer: resultOperations(firstOperand, secondOperand, operation),
+    answer: String(resultOperations(firstOperand, secondOperand, operation)),
   };
 };
 
-const welcome = 'What is the result of the expression?. \n';
-
-export default () =>
-  (message) => {
-    switch (message) {
-      case 'getWelcome':
-        return welcome;
-      case 'getQuestion':
-        return getQuestion;
-      default:
-        return welcome;
-    }
-  };
+export default () => {
+  const description = 'What is the result of the expression?.';
+  gamesProcess(description, getPuzzle);
+};
