@@ -1,9 +1,7 @@
 import startGamesProcess from '../games-process';
 import getRandomNumber from '../random-number';
 
-const description = 'Answer "yes" if number even otherwise answer "no".';
-const answerYes = 'yes';
-const answerNo = 'no';
+const description = 'Answer "yes" if number prime otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num < 2) {
@@ -22,7 +20,7 @@ const game = () => {
 
   return {
     question: String(question),
-    answer: isPrime(question) ? answerYes : answerNo,
+    answer: isPrime(question) ? 'yes' : 'no',
   };
 };
 
